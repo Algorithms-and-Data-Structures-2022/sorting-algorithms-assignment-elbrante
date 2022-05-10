@@ -18,10 +18,13 @@ namespace assignment {
     }
 
     // вычисляем индекс опорного элемента ... median_of_three ...
-    int pivot_index = -1 /* напишите здесь свой код ... */;
+    int pivot_index = median_of_three(arr, start, stop);
 
     // производим разбиение относительно опорного элемента ...  partition ...
+    int partInd = partition(arr,start, stop, pivot_index);
     // рекурсивно повторяем процедуру над левой и правой частью ...
+    quick_sort(arr, start, partInd-1);
+    quick_sort(arr, partInd+1, stop);
   }
 
 }  // namespace assignment
